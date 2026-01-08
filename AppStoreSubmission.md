@@ -83,13 +83,13 @@ Next-generation camera app with advanced 3D capture technology. High-quality rec
 ## サポート情報
 
 ### サポートURL
-https://[あなたのドメイン]/gscam/support.html
+https://ochiainobuto.github.io/GSCam/
 
 ### プライバシーポリシーURL
-https://[あなたのドメイン]/gscam/privacy-policy.html
+https://ochiainobuto.github.io/GSCam/privacy-policy.html
 
 ### マーケティングURL（オプション）
-https://[あなたのドメイン]/gscam/
+https://ochiainobuto.github.io/GSCam/
 
 ---
 
@@ -170,7 +170,17 @@ https://[あなたのドメイン]/gscam/
 ---
 
 ## 注意事項
-1. 実際の提出前に、すべてのURLを実際のドメインに置き換えてください
-2. 開発者名/会社名を正しい情報に更新してください
+
+### GitHub Pagesの設定方法
+1. GitHubリポジトリの「Settings」→「Pages」に移動
+2. Source: 「Deploy from a branch」を選択
+3. Branch: 使用するブランチ（例: `main` または `claude/app-store-submission-pages-gfBrH`）を選択
+4. フォルダ: 「/ (root)」を選択
+5. 「Save」をクリック
+6. 数分後、`https://ochiainobuto.github.io/GSCam/` でページが公開されます
+
+### その他の注意事項
+1. 開発者名/会社名を正しい情報に更新してください（HTMLファイルのフッター部分）
+2. HTMLファイル内のメールアドレス（`support@example.com`、`privacy@example.com`）を実際のアドレスに変更してください
 3. スクリーンショットは実機で撮影し、適切なサイズに調整してください
-4. プライバシーポリシーとサポートページは提出前に公開してください
+4. GitHub Pagesでページを公開してから、App Storeへ提出してください
