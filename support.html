@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSCam サポート | GSCam Support</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f7;
+        }
+
+        .container {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .lang-toggle {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .lang-toggle button {
+            background: white;
+            border: 2px solid #667eea;
+            padding: 10px 30px;
+            margin: 0 10px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        .lang-toggle button:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        .lang-toggle button.active {
+            background: #667eea;
+            color: white;
+        }
+
+        .content-section {
+            background: white;
+            margin: 30px auto;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+        }
+
+        .content-section h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 2em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .content-section h3 {
+            color: #764ba2;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .content-section p {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .content-section ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .content-section li {
+            margin-bottom: 10px;
+            font-size: 1.05em;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .feature-card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .feature-card h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .faq-item {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .faq-item h4 {
+            color: #764ba2;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .contact-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .contact-box h3 {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .contact-box a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 2px solid white;
+            padding-bottom: 2px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            margin-top: 50px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>GSCam</h1>
+        <p>3D Capture Camera Application</p>
+    </header>
+
+    <div class="container">
+        <div class="lang-toggle">
+            <button id="btn-ja" class="active" onclick="showLanguage('ja')">日本語</button>
+            <button id="btn-en" onclick="showLanguage('en')">English</button>
+        </div>
+
+        <!-- Japanese Content -->
+        <div id="content-ja" class="content-section">
+            <h2>GSCam サポート</h2>
+
+            <p>GSCamをご利用いただき、ありがとうございます。このページでは、アプリの使い方やよくある質問についてご案内します。</p>
+
+            <h3>主な機能</h3>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>📹 ビデオ録画</h4>
+                    <p>高品質なビデオ録画機能を搭載。RECボタンをタップするだけで簡単に録画を開始できます。</p>
+                </div>
+                <div class="feature-card">
+                    <h4>⚙️ カスタム設定</h4>
+                    <p>撮影設定を自由にカスタマイズ可能。あなたのニーズに合わせた最適な設定を保存できます。</p>
+                </div>
+                <div class="feature-card">
+                    <h4>💾 データ管理</h4>
+                    <p>撮影したデータを効率的に管理。リアルタイムで撮影状況を確認できます。</p>
+                </div>
+                <div class="feature-card">
+                    <h4>📊 カウンター表示</h4>
+                    <p>撮影中のフレーム数や時間をリアルタイムで表示。正確な撮影管理が可能です。</p>
+                </div>
+            </div>
+
+            <h3>使い方</h3>
+            <div class="faq-item">
+                <h4>1. 撮影を開始する</h4>
+                <p>メイン画面の赤い「REC」ボタンをタップすると録画が開始されます。録画中は画面上部に録画時間が表示されます。</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>2. 設定を変更する</h4>
+                <p>画面右上の設定ボタンをタップすると、撮影設定画面が表示されます。解像度やフレームレートなどを調整できます。</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>3. データを保存する</h4>
+                <p>撮影したビデオは自動的にフォトライブラリに保存されます。アプリ内でもデータの管理が可能です。</p>
+            </div>
+
+            <h3>よくある質問</h3>
+            <div class="faq-item">
+                <h4>Q: カメラへのアクセス許可が必要ですか？</h4>
+                <p>A: はい、GSCamは写真やビデオを撮影するためにカメラとフォトライブラリへのアクセス許可が必要です。初回起動時に許可をお願いします。</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>Q: 撮影したデータはどこに保存されますか？</h4>
+                <p>A: 撮影したビデオは端末のフォトライブラリに保存されます。写真アプリから確認できます。</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>Q: ストレージ容量はどれくらい必要ですか？</h4>
+                <p>A: 録画時間や解像度によって異なりますが、長時間の録画には十分な空き容量を確保することをお勧めします。</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>Q: アプリが起動しない場合はどうすればいいですか？</h4>
+                <p>A: 端末の再起動をお試しください。それでも解決しない場合は、アプリを再インストールしてみてください。</p>
+            </div>
+
+            <h3>必要な権限</h3>
+            <ul>
+                <li><strong>カメラ:</strong> 写真やビデオを撮影するために必要です</li>
+                <li><strong>フォトライブラリ:</strong> 撮影したデータを保存・読み込むために必要です</li>
+            </ul>
+
+            <h3>動作環境</h3>
+            <ul>
+                <li>iOS 13.0以降</li>
+                <li>iPhone対応</li>
+                <li>カメラ搭載デバイス</li>
+            </ul>
+
+            <div class="contact-box">
+                <h3>お問い合わせ</h3>
+                <p>その他のご質問やサポートが必要な場合は、以下までご連絡ください。</p>
+                <p>Email: <a href="mailto:support@example.com">support@example.com</a></p>
+            </div>
+        </div>
+
+        <!-- English Content -->
+        <div id="content-en" class="content-section hidden">
+            <h2>GSCam Support</h2>
+
+            <p>Thank you for using GSCam. This page provides information about how to use the app and answers to frequently asked questions.</p>
+
+            <h3>Main Features</h3>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>📹 Video Recording</h4>
+                    <p>High-quality video recording capability. Simply tap the REC button to start recording.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>⚙️ Custom Settings</h4>
+                    <p>Fully customizable capture settings. Save your preferred configurations for optimal results.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>💾 Data Management</h4>
+                    <p>Efficiently manage your captured data. Monitor recording status in real-time.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>📊 Counter Display</h4>
+                    <p>Real-time display of frame count and recording time. Precise capture management.</p>
+                </div>
+            </div>
+
+            <h3>How to Use</h3>
+            <div class="faq-item">
+                <h4>1. Start Recording</h4>
+                <p>Tap the red "REC" button on the main screen to start recording. Recording time will be displayed at the top of the screen.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>2. Change Settings</h4>
+                <p>Tap the settings button in the top right corner to access the settings screen. Adjust resolution, frame rate, and other parameters.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>3. Save Data</h4>
+                <p>Recorded videos are automatically saved to your Photo Library. You can also manage data within the app.</p>
+            </div>
+
+            <h3>Frequently Asked Questions</h3>
+            <div class="faq-item">
+                <h4>Q: Do I need to grant camera access permission?</h4>
+                <p>A: Yes, GSCam requires access to your camera and photo library to capture photos and videos. Please grant permission when prompted on first launch.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>Q: Where are the recorded videos saved?</h4>
+                <p>A: Recorded videos are saved to your device's Photo Library. You can view them in the Photos app.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>Q: How much storage space is required?</h4>
+                <p>A: Storage requirements vary depending on recording duration and resolution. We recommend ensuring sufficient free space for extended recordings.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>Q: What should I do if the app won't launch?</h4>
+                <p>A: Try restarting your device. If the problem persists, try reinstalling the app.</p>
+            </div>
+
+            <h3>Required Permissions</h3>
+            <ul>
+                <li><strong>Camera:</strong> Required to capture photos and videos</li>
+                <li><strong>Photo Library:</strong> Required to save and access captured data</li>
+            </ul>
+
+            <h3>System Requirements</h3>
+            <ul>
+                <li>iOS 13.0 or later</li>
+                <li>iPhone compatible</li>
+                <li>Camera-equipped device</li>
+            </ul>
+
+            <div class="contact-box">
+                <h3>Contact Us</h3>
+                <p>For additional questions or support, please contact us:</p>
+                <p>Email: <a href="mailto:support@example.com">support@example.com</a></p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 GSCam. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showLanguage(lang) {
+            const jaContent = document.getElementById('content-ja');
+            const enContent = document.getElementById('content-en');
+            const jaBtn = document.getElementById('btn-ja');
+            const enBtn = document.getElementById('btn-en');
+
+            if (lang === 'ja') {
+                jaContent.classList.remove('hidden');
+                enContent.classList.add('hidden');
+                jaBtn.classList.add('active');
+                enBtn.classList.remove('active');
+            } else {
+                jaContent.classList.add('hidden');
+                enContent.classList.remove('hidden');
+                jaBtn.classList.remove('active');
+                enBtn.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
