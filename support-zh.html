@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GSCam 支持</title>
+  <style>
+    :root { color-scheme: light; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Noto Sans SC", "PingFang SC", "Hiragino Sans", "Segoe UI", Roboto, sans-serif; margin: 0; line-height: 1.7; }
+    header { padding: 28px 18px; background: #f6f7f9; border-bottom: 1px solid #e7e9ee; }
+    header h1 { margin: 0; font-size: 24px; }
+    header p { margin: 6px 0 0; color: #444; }
+    nav { margin-top: 10px; font-size: 14px; }
+    nav a { color: #0b57d0; text-decoration: none; margin-right: 14px; }
+    main { max-width: 920px; margin: 0 auto; padding: 22px 18px 60px; }
+    h2 { margin-top: 26px; font-size: 18px; }
+    .card { border: 1px solid #e7e9ee; border-radius: 14px; padding: 16px; background: #fff; box-shadow: 0 1px 2px rgba(0,0,0,.04); }
+    .grid { display: grid; gap: 14px; grid-template-columns: 1fr; }
+    @media (min-width: 860px) { .grid { grid-template-columns: 1fr 1fr; } }
+    code, pre { background: #f2f3f5; border-radius: 8px; padding: 2px 6px; }
+    .muted { color: #555; }
+    footer { border-top: 1px solid #e7e9ee; padding: 18px; color: #666; font-size: 13px; }
+    ul { padding-left: 20px; }
+    li { margin: 6px 0; }
+    .badge { display:inline-block; padding: 2px 8px; border-radius: 999px; background:#eef3ff; color:#1b4fd6; font-size: 12px; margin-left: 8px; }
+    .lang { margin-top: 10px; font-size: 13px; }
+    .lang a { margin-right: 10px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>GSCam 支持 <span class="badge">iPhone</span></h1>
+    <p>将 <strong>3D Gaussian Splatting（PLY）</strong> 叠加到 AR 相机画面上，并进行录制与保存的应用。</p>
+
+    <div class="lang">
+      <a href="support-jp.html">日本語</a>
+      <a href="index.html">English</a>
+      <a href="support-zh.html"><strong>中文</strong></a>
+    </div>
+
+    <nav>
+      <a href="#quickstart">使用方法</a>
+      <a href="#faq">常见问题</a>
+      <a href="#troubleshooting">故障排除</a>
+      <a href="#contact">联系我们</a>
+      <a href="privacy-zh.html">隐私政策</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="card" id="quickstart">
+      <h2>使用方法（快速开始）</h2>
+      <ol>
+        <li>启动应用。当系统询问 <strong>相机</strong> 权限时，请点击“允许”。</li>
+        <li>点击 <strong>加载 PLY</strong>，选择要显示的模型（从应用内 <code>PlyModels</code> 文件夹读取）。</li>
+        <li>使用 <strong>移动 / 旋转 / 缩放</strong> 按钮调整位置。</li>
+        <li>选择录制设置（例如：<strong>24fps / 30fps</strong>、<strong>1920×1080 / 3840×1080</strong>）。</li>
+        <li>点击 <strong>REC</strong> 开始录制；再次点击停止。</li>
+        <li>录制完成后，视频会保存到设备的 <strong>照片（相册）</strong> 中。</li>
+      </ol>
+      <p class="muted">注：若需要录制声音，还需要允许 <strong>麦克风</strong> 权限。</p>
+    </section>
+
+    <h2 id="faq">常见问题</h2>
+    <div class="grid">
+      <section class="card">
+        <h3>Q. 数据会上传到服务器吗？</h3>
+        <p>A. 不会。本应用基本上<strong>在本机完成处理</strong>。录制内容保存到系统“照片”中（详情请见 <a href="privacy-zh.html">隐私政策</a>）。</p>
+      </section>
+      <section class="card">
+        <h3>Q. AR 跟踪不稳定</h3>
+        <p>A. 请在光线充足的环境中，朝着地面/墙面等有纹理的区域缓慢移动设备。暗光、只有纯白墙面、或快速移动时会导致跟踪不稳定。</p>
+      </section>
+      <section class="card">
+        <h3>Q. 录制卡顿 / 掉帧</h3>
+        <p>A. 建议先降低 <strong>分辨率（1920×1080）</strong> 或 <strong>帧率（24）</strong>。模型较大时，替换为更轻量的 PLY 也能改善。</p>
+      </section>
+      <section class="card">
+        <h3>Q. 无法保存到“照片”</h3>
+        <p>A. 请在 iOS 设置中允许“添加到照片”：<br><strong>设置 → 隐私与安全性 → 照片</strong>，检查 GSCam 的权限。</p>
+      </section>
+    </div>
+
+    <h2 id="troubleshooting">故障排除</h2>
+    <section class="card">
+      <ul>
+        <li><strong>相机画面全黑</strong>：请允许相机权限 → 在 iOS“设置”中打开 GSCam 的相机权限。</li>
+        <li><strong>没有声音</strong>：请允许麦克风权限，并确认设备麦克风没有被遮挡。</li>
+        <li><strong>模型不显示</strong>：确认 PLY 是否放在 <code>PlyModels</code> 中，以及格式是否受支持。</li>
+        <li><strong>录制中途停止</strong>：请确保有足够的存储空间；高分辨率录制会占用较多容量。</li>
+      </ul>
+    </section>
+
+    <h2 id="contact">联系我们</h2>
+    <section class="card">
+      <p>提交问题时，建议附上以下信息以便更快定位：</p>
+      <ul>
+        <li>设备型号 / iOS 版本</li>
+        <li>复现步骤（尽量详细）</li>
+        <li>选择的分辨率、帧率、模型（PLY）</li>
+        <li>如有可能，提供截图或录屏</li>
+      </ul>
+      <p>联系邮箱：<a href="mailto:ochiai@smartrig-app.com">ochiai@smartrig-app.com</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <div>最后更新：2026-01-02</div>
+  </footer>
+</body>
+</html>

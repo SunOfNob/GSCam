@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GSCam サポート</title>
+  <style>
+    :root { color-scheme: light; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Noto Sans JP", "Segoe UI", Roboto, sans-serif; margin: 0; line-height: 1.7; }
+    header { padding: 28px 18px; background: #f6f7f9; border-bottom: 1px solid #e7e9ee; }
+    header h1 { margin: 0; font-size: 24px; }
+    header p { margin: 6px 0 0; color: #444; }
+    nav { margin-top: 10px; font-size: 14px; }
+    nav a { color: #0b57d0; text-decoration: none; margin-right: 14px; }
+    main { max-width: 920px; margin: 0 auto; padding: 22px 18px 60px; }
+    h2 { margin-top: 26px; font-size: 18px; }
+    .card { border: 1px solid #e7e9ee; border-radius: 14px; padding: 16px; background: #fff; box-shadow: 0 1px 2px rgba(0,0,0,.04); }
+    .grid { display: grid; gap: 14px; grid-template-columns: 1fr; }
+    @media (min-width: 860px) { .grid { grid-template-columns: 1fr 1fr; } }
+    code, pre { background: #f2f3f5; border-radius: 8px; padding: 2px 6px; }
+    .muted { color: #555; }
+    footer { border-top: 1px solid #e7e9ee; padding: 18px; color: #666; font-size: 13px; }
+    ul { padding-left: 20px; }
+    li { margin: 6px 0; }
+    .badge { display:inline-block; padding: 2px 8px; border-radius: 999px; background:#eef3ff; color:#1b4fd6; font-size: 12px; margin-left: 8px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>GSCam サポート <span class="badge">iPhone</span></h1>
+    <p>ARカメラ映像に <strong>3D Gaussian Splatting（PLY）</strong> を重ねて録画・保存するためのアプリです。</p>
+    <div class="lang">
+      <a href="support-jp.html"><strong>日本語</strong></a>
+      <a href="index.html">English</a>
+      <a href="support-zh.html">中文</a>
+    </div>
+
+    <nav>
+      <a href="#quickstart">使い方</a>
+      <a href="#faq">FAQ</a>
+      <a href="#troubleshooting">トラブルシューティング</a>
+      <a href="#contact">お問い合わせ</a>
+      <a href="privacy-jp.html">プライバシーポリシー</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="card" id="quickstart">
+      <h2>使い方（クイックスタート）</h2>
+      <ol>
+        <li>アプリを起動し、<strong>カメラ</strong> の許可を求められたら「許可」します。</li>
+        <li><strong>PLY 読み込み</strong> から表示したいモデルを選びます（アプリ内の <code>PlyModels</code> から読み込み）。</li>
+        <li>表示位置を <strong>移動 / 回転 / スケール</strong> のボタンで調整します。</li>
+        <li>録画設定を選びます（例：<strong>24fps / 30fps</strong>、<strong>1920×1080 / 3840×1080</strong>）。</li>
+        <li><strong>REC</strong> を押して録画開始。もう一度押すと停止します。</li>
+        <li>録画が完了すると、端末の <strong>写真（フォトライブラリ）</strong> に保存されます。</li>
+      </ol>
+      <p class="muted">※ 録画時に音声を入れる場合は <strong>マイク</strong> の許可も必要です。</p>
+    </section>
+
+    <h2 id="faq">FAQ</h2>
+    <div class="grid">
+      <section class="card">
+        <h3>Q. データはどこかに送信されますか？</h3>
+        <p>A. いいえ。本アプリは基本的に<strong>端末内で完結</strong>します。録画データは端末の写真アプリに保存されます（詳細は <a href="privacy-jp.html">プライバシーポリシー</a>）。</p>
+      </section>
+      <section class="card">
+        <h3>Q. うまくAR追跡できません</h3>
+        <p>A. 明るい場所で、床や壁などテクスチャがある方向にゆっくり端末を動かしてください。暗所・白い壁のみ・高速移動は追跡が不安定になります。</p>
+      </section>
+      <section class="card">
+        <h3>Q. 録画が重い / カクつきます</h3>
+        <p>A. まず <strong>解像度を下げる（1920×1080）</strong> / <strong>fpsを下げる（24）</strong> を試してください。モデルが大きい場合は軽量なPLYに差し替えると改善します。</p>
+      </section>
+      <section class="card">
+        <h3>Q. 写真に保存されません</h3>
+        <p>A. iOSの設定で「写真への追加」を許可してください：<br><strong>設定 → プライバシーとセキュリティ → 写真</strong> からGSCamの権限を確認します。</p>
+      </section>
+    </div>
+
+    <h2 id="troubleshooting">トラブルシューティング</h2>
+    <section class="card">
+      <ul>
+        <li><strong>カメラが真っ黒</strong>：カメラ権限を許可 → iOS「設定」からGSCamのカメラをON。</li>
+        <li><strong>音声が入らない</strong>：マイク権限を許可。端末のマイクが塞がれていないか確認。</li>
+        <li><strong>モデルが表示されない</strong>：PLYがアプリ内の <code>PlyModels</code> に入っているか、対応形式か確認。</li>
+        <li><strong>録画が途中で止まる</strong>：ストレージ空き容量を確保。高解像度録画は容量を多く消費します。</li>
+      </ul>
+    </section>
+
+    <h2 id="contact">お問い合わせ</h2>
+    <section class="card">
+      <p>不具合報告の際は、以下を添えると調査が早くなります。</p>
+      <ul>
+        <li>端末名 / iOSバージョン</li>
+        <li>再現手順（できるだけ具体的に）</li>
+        <li>選択した解像度・fps・モデル（PLY）</li>
+        <li>可能なら画面録画やスクリーンショット</li>
+      </ul>
+      <p>連絡先：<a href="mailto:ochiai@smartrig-app.com">ochiai@smartrig-app.com</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <div>最終更新日：2026-01-02</div>
+  </footer>
+</body>
+</html>
